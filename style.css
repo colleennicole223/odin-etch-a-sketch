@@ -1,0 +1,61 @@
+/* style.css */
+
+body{
+    --background: #2c2c2c;
+    --text: #e1e1e1;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main{
+    width: 1300px;
+    min-width: 800px;
+    display: flex;
+    justify-content: center;
+    /* background-color: rgb(63, 63, 63); */
+    padding: 15vh 2vw;
+}
+
+#styleSection, #sketchSection, #formatSection{
+    width: 100%;
+    padding: 16px 16px;
+}
+
+/* ------------------------------------------- */
+
+#styleSection{
+    /* background-color: pink; */
+    width: 50%;
+}
+
+/* ------------------------------------------- */
+
+#sketchSection{
+    /* background-color: red; */
+    width: 100%;
+}
+
+#gridBlock{
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* background-color: yellow; */
+    justify-content: center;
+    align-content: center;
+}
+
+.square{
+    background-color: white;
+}
+
+/* ------------------------------------------- */
+
+#formatSection{
+    /* background-color: purple; */
+    width: 50%;
+}
