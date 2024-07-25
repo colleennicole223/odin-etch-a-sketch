@@ -47,14 +47,15 @@ This is a solution to the [Etch-a-Sketch challenge on The Odin Project](https://
 - JavaScript 
   - DOM Manipulation
     - Element creation to add all of the squares in the grid based on a user defined size 
-    - Event Listeners to update grid size once input is changed 
+    - Event Listeners to update grid size once input is changed, and pen color when changed 
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
 - Using '!+tab' will autofill the HTML boilerplate 🤯
-- Input element with min and max values  
+- Can put a min and max range on an input element, there are a lot of different input types 
+- Explored different types of event listeners (mouseover, mouseup/down)
 
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
