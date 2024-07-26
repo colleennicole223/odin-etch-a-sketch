@@ -1,13 +1,13 @@
 
 const grid = document.querySelector("#gridBlock");
 const color = document.querySelector("#colorSelection")
-
+const gridSize = document.querySelector("#gridSize")
 
 // Create the grid of squares 🔮
-updateGrid(24,color.value);
+updateGrid(16,color.value);
 
 // select all of the squares 
-const squares = document.querySelectorAll('square');
+let squares = document.querySelectorAll('square');
 
 // when the color picked is changed, update the listeners 🔊 for each square with new color 🎨
 color.addEventListener("input", () =>{
@@ -31,8 +31,15 @@ color.addEventListener("input", () =>{
     });
 })
 
-
-
+// when grid size is changed, remove the previous grid and replace with new size
+gridSize.addEventListener("change", () =>{
+    squares.forEach(square =>{
+        grid.removeChild(square);
+    });
+    console.log("Updated grid size to: "+gridSize.value);
+    updateGrid(gridSize.value, color.value);
+    squares = document.querySelectorAll('square');
+})
 
 // Functions ------------------------------------------------------------------------
 
@@ -79,6 +86,7 @@ function updateGrid(value,color){
         });
 
     }
+    
 }
 
 
