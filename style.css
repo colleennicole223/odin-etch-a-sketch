@@ -2,11 +2,12 @@
 
 body{
     --background: #2c2c2c;
-    --text: #e1e1e1;
+    --medium: #929292;
+    --light: #e1e1e1;
     background-color: var(--background);
     display: flex;
     justify-content: center;
-    color: var(--text);
+    color: var(--medium);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -22,6 +23,31 @@ body{
 #styleSection, #sketchSection, #formatSection{
     width: 100%;
     padding: 16px 16px;
+}
+
+input{
+    border: none;
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 800;
+    color: var(--light);
+    background-color: var(--background);
+}
+
+h1{
+    color: var(--light);
+}
+
+h2{
+    margin-top: 36px;
+    color: var(--light);
+}
+
+h4{
+    margin: 0px;
+    padding: 0px 12px;
 }
 
 /* ------------------------------------------- */
@@ -58,4 +84,32 @@ body{
 #formatSection{
     /* background-color: purple; */
     width: 50%;
+}
+
+.gridInputSection{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+#gridSize{
+    border: 2px solid;
+    border-color: var(--light);
+    border-radius: 30px;
+}
+
+.drawSelect, .penSelect{
+    display: flex;
+    flex-direction: row;
+    height: max-content;
+    align-items: center;
+}
+
+
+
+.drawSelect input, .penSelect input{
+    margin: 0px;
+    padding: 0px;
+    width: 24px;
+    border: 2px solid;
 }
