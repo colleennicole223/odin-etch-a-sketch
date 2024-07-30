@@ -73,10 +73,12 @@ h4{
     /* background-color: yellow; */
     justify-content: center;
     align-content: center;
+    background-color: black;
 }
 
 .square{
     background-color: white;
+    opacity: 1;
 }
 
 /* ------------------------------------------- */

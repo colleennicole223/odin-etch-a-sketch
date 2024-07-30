@@ -3,13 +3,15 @@ const grid = document.querySelector("#gridBlock");
 const color = document.querySelector("#colorSelection")
 const gridSize = document.querySelector("#gridSize")
 const drawSelection = document.querySelectorAll('#drawingMethod');
+const penSelection = document.querySelectorAll('#penMethod');
 
 // Initilize variables 📃
-let draw = "clickDrag"
+let draw = "clickDrag";
+let pen = "normal";
 let isClicked = false;
 
 // Create the grid of squares 🔮
-updateGrid(16, color.value, draw);
+updateGrid(16, color.value, draw, pen);
 
 // select all of the newly created squares 
 let squares = document.querySelectorAll('square');
@@ -17,8 +19,28 @@ let squares = document.querySelectorAll('square');
 // when the color picked is changed, update the listeners 🔊 for each square with new color 🎨
 color.addEventListener("input", () =>{
     squares.forEach(square => {
-        updateListener(square, color.value, draw);
+        updateListener(square, color.value, draw, pen);
     });
+})
+
+drawSelection.forEach(selection => {
+    selection.addEventListener("click", () => {
+        isClicked = false;
+        squares.forEach(square => {
+            updateListener(square, color.value, selection.value, pen);
+        });
+        console.log("Drawing method updated, draw = "+selection.value);
+    })
+})
+
+penSelection.forEach(selection => {
+    selection.addEventListener("click", () => {
+        pen = selection.value;
+        squares.forEach(square => {
+            updateListener(square, color.value, draw, selection.value);
+        });
+        console.log("Pen method updated, pen = "+selection.value);
+    })
 })
 
 // when grid size is changed, remove the previous grid and replace with new size
@@ -27,18 +49,8 @@ gridSize.addEventListener("change", () =>{
         grid.removeChild(square);
     });
     console.log("Updated grid size to: "+gridSize.value);
-    updateGrid(gridSize.value, color.value);
+    updateGrid(gridSize.value, color.value, draw, pen);
     squares = document.querySelectorAll('square');
-})
-
-drawSelection.forEach(selection => {
-    selection.addEventListener("click", () => {
-        isClicked = false;
-        squares.forEach(square => {
-            updateListener(square, color.value, selection.value);
-        });
-        console.log("Drawing method updated, draw = "+selection.value);
-    })
 })
 
 
@@ -46,51 +58,64 @@ drawSelection.forEach(selection => {
 
 
 // Grid creation and inital square color listeners 🔊
-function updateGrid(value, color, draw){
+function updateGrid(value, color, draw, pen){
     i = 0;
-    // k = (600-((1)*(value-1)))/value;
     k = 600/value;
-    
-    grid.draggable = false;
 
     while(i<(value * value)){
         const square = document.createElement("square");
+        square.setAttribute('draggable', 'false');
         square.classList.add("square");
         grid.appendChild(square);
         i++;
         square.style.width=k+"px";
         square.style.height=k+"px";
         square.style.backgroundColor = "white"
-        square.draggable = false;
-        updateListener(square, color, draw);
+        square.style.opacity = 1;
+        updateListener(square, color, draw, pen);
     }
 }
 
-function updateListener(square, color, drawInput){
+function updateOpacity(square, pen){
+    if(pen == "shader"){
+        if(square.style.opacity > 0.3){
+            square.style.opacity -= 0.025;
+            console.log(square.style.opacity);
+        }
+        
+    }else{
+        square.style.opacity = 1;
+    }
+}
 
+function updateListener(square, color, drawInput, penInput){
+    pen = penInput;
     draw = drawInput;
     
     square.addEventListener(("mousedown"), () => {
         if(draw == "clickDrag"){
             isClicked = true;
             square.style.backgroundColor = color;
+            updateOpacity(square, pen);
         }
     });
 
     square.addEventListener(("mouseover"), () => {
-        console.log(isClicked)
         if(isClicked == true){
             square.style.backgroundColor = color;
             console.log("hovering while clicked is true");
+            updateOpacity(square, pen);
         }else if(isClicked == false && draw == "hover"){
             square.style.backgroundColor = color;
             console.log("hovering while clicked is false but hover is true");
+            updateOpacity(square, pen);
         }
     });
 
     square.addEventListener(("mouseup"), () => {
         if(draw == "clickDrag"){
             isClicked = false;
+            updateOpacity(square, pen);
         }
     });
 

@@ -7,7 +7,7 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css"> 
 </head>
-<body>
+<body draggable = "false">
     <div class="main">
         <div id="styleSection">
             <h1>Style</h1>
@@ -17,7 +17,7 @@
 
         <div id="sketchSection">
             <h1>Sketch</h1>
-            <div id="gridBlock">
+            <div id="gridBlock" draggable="false">
 
             </div>
         </div>
@@ -25,7 +25,7 @@
         <div id="formatSection">
             <h1>Format</h1>
             <h2>Grid Size</h2>
-            <div class="gridInputSection">
+            <div class="gridInputSection" draggable="false">
                 <input type="number" id="gridSize" value="16" min="1" max="64"/>
                 <h3>px</h3>
             </div>
@@ -34,23 +34,23 @@
             <div>
                 <div class="drawSelect">
                     <input type="radio" id="drawingMethod" name="drawingMethod" value="clickDrag" checked/>
-                    <label for="drawingMethod1"><h4>Click & Drag</h4></label>
+                    <label><h4>Click & Drag</h4></label>
                 </div>
                 <div class="drawSelect">
                     <input type="radio" id="drawingMethod" name="drawingMethod" value="hover"/>
-                    <label for="drawingMethod2"><h4>Hover</h4></label>
+                    <label><h4>Hover</h4></label>
                 </div>
             </div>
 
             <h2>Pen Style</h2>
             <div>
                 <div class="penSelect">
-                    <input type="radio" id="penMethod1" name="penMethod" value="Normal" checked/>
-                    <label for="penMethod1"><h4>Normal</h4></label>
+                    <input type="radio" id="penMethod" name="penMethod" value="normal" checked/>
+                    <label><h4>Normal</h4></label>
                 </div>
                 <div class="penSelect">
-                    <input type="radio" id="penMethod2" name="penMethod" value="Shader"/>
-                    <label for="penMethod2"><h4>Shader</h4></label>
+                    <input type="radio" id="penMethod" name="penMethod" value="shader"/>
+                    <label><h4>Shader</h4></label>
                 </div>
             </div>
             
