@@ -80,9 +80,7 @@ function updateOpacity(square, pen){
     if(pen == "shader"){
         if(square.style.opacity > 0.3){
             square.style.opacity -= 0.025;
-            console.log(square.style.opacity);
         }
-        
     }else{
         square.style.opacity = 1;
     }
