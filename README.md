@@ -23,11 +23,9 @@ This is a solution to the [Etch-a-Sketch challenge on The Odin Project](https://
 #### Final Screenshot
 ![](./screenshot-final.jpeg)
 
-#### Wireframe Prototype
-![](./screenshot-wireframe.jpg)
+<!-- #### Wireframe Prototype
+![](./screenshot-wireframe.jpg) -->
 
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
