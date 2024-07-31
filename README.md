@@ -52,7 +52,8 @@ This is a solution to the [Etch-a-Sketch challenge on The Odin Project](https://
 - Using '!+tab' will autofill the HTML boilerplate 🤯
 - Can put a min and max range on an input element and that there are a lot of different input types 
 - Explored different types of event listeners (mouseover, mouseup/down) 🖱️
-- DOM element creation can be removed and replaced 
+- DOM elements can be removed and replaced 
+- Use the 'input' events for immediate, real-time updates and the 'change' event for actions that happen after the user finishes their input
 
 ### Continued development
 
@@ -63,3 +64,6 @@ Once I learn more about grids, I plan to come back and restructure this project.
 - Personal Website - [Colleen Nicole](https://www.colleennicole.com)
 - Project Website - [The Odin Project](https://www.theodinproject.com)
 
+## Acknowledgments
+
+- SavvyWizardMan [https://github.com/SavvyWizardMan](https://github.com/SavvyWizardMan) identified a lag spike and suggested replacing 'input' with 'change' event for the color listener  

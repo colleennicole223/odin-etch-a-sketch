@@ -17,7 +17,7 @@ updateGrid(16, color.value, draw, pen);
 let squares = document.querySelectorAll('square');
 
 // when the color picked is changed, update the listeners 🔊 for each square with new color 🎨
-color.addEventListener("input", () =>{
+color.addEventListener("change", () =>{
     squares.forEach(square => {
         updateListener(square, color.value, draw, pen);
     });
