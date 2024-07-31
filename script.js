@@ -24,7 +24,7 @@ color.addEventListener("change", () =>{
 })
 
 drawSelection.forEach(selection => {
-    selection.addEventListener("click", () => {
+    selection.addEventListener("change", () => {
         isClicked = false;
         squares.forEach(square => {
             updateListener(square, color.value, selection.value, pen);
@@ -34,7 +34,7 @@ drawSelection.forEach(selection => {
 })
 
 penSelection.forEach(selection => {
-    selection.addEventListener("click", () => {
+    selection.addEventListener("change", () => {
         pen = selection.value;
         squares.forEach(square => {
             updateListener(square, color.value, draw, selection.value);
